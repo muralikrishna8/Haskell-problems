@@ -22,3 +22,8 @@ elementAt (x:_) 1 = x
 elementAt (_:arr) index = elementAt arr (index-1)
 
 elementAt' arr index = arr !! (index-1)
+
+-- Find the number of elements of a list
+myLength :: [a] -> Int
+myLength [] = 0
+myLength (_:xs) = 1 + myLength xs
