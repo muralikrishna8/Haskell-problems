@@ -13,3 +13,12 @@ myLast (_:xs) = myLast xs
 myButLast :: [a] -> a
 myButLast (x:[_]) = x
 myButLast (_:xs) = myButLast xs
+
+-- Find the K'th element of a list. The first element index is 1
+-- elementAt [1,2,3] 2 -> 2
+-- elementAt "haskell" 5 -> 'e'
+elementAt :: [a] -> Int -> a
+elementAt (x:_) 1 = x
+elementAt (_:arr) index = elementAt arr (index-1)
+
+elementAt' arr index = arr !! (index-1)
