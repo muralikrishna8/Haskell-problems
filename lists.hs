@@ -27,3 +27,15 @@ elementAt' arr index = arr !! (index-1)
 myLength :: [a] -> Int
 myLength [] = 0
 myLength (_:xs) = 1 + myLength xs
+
+-- Reverse a list
+myReverse :: [a] -> [a]
+myReverse [] = []
+myReverse (x:xs) = myReverse(xs)++[x]
+
+myReverse' :: [a] -> [a]
+myReverse' list = myReverse'' list []
+    where
+        myReverse'' [] reverse = reverse
+        myReverse'' (x:xs) reverse = myReverse'' xs (x:reverse)
+
