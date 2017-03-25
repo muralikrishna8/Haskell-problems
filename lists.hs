@@ -39,3 +39,12 @@ myReverse' list = myReverse'' list []
         myReverse'' [] reverse = reverse
         myReverse'' (x:xs) reverse = myReverse'' xs (x:reverse)
 
+-- Palindrome or not
+-- A palindrome can be read forward or backward; e.g. (x a m a x).
+isPalindrome :: Eq a => [a] -> Bool
+isPalindrome [] = True
+isPalindrome [_] = True
+isPalindrome x = if ((head x) == (last x))
+    then isPalindrome (tail (myReverse (tail x)))
+    else False
+
