@@ -45,6 +45,14 @@ isPalindrome :: Eq a => [a] -> Bool
 isPalindrome [] = True
 isPalindrome [_] = True
 isPalindrome x = if ((head x) == (last x))
-    then isPalindrome (tail (myReverse (tail x)))
+    then isPalindrome (tail (reverse (tail x)))
+    else False
+
+isPalindrome' list = list == (reverse list)
+
+isPalindrome'' [] = True
+isPalindrome'' [_] = True
+isPalindrome'' x = if ((head x) == (last x))
+    then isPalindrome'' (init (tail x))
     else False
 
