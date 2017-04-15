@@ -14,3 +14,6 @@ and' = foldl (\x acc -> if x then acc else False) True
 -- or is like and, only it returns True if any of the boolean values in a list is True.
 or' :: [Bool] -> Bool
 or' = foldl (\x acc -> if x then True else acc) False
+
+any' :: (t -> Bool) -> [t] -> Bool
+any' fn list = or $ map(\el -> fn el) list
