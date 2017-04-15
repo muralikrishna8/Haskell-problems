@@ -17,3 +17,6 @@ or' = foldl (\x acc -> if x then True else acc) False
 
 any' :: (t -> Bool) -> [t] -> Bool
 any' fn list = or $ map(\el -> fn el) list
+
+all' :: (t -> Bool) -> [t] -> Bool
+all' fn = and . map(\el -> fn el)
