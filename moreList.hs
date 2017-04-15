@@ -10,3 +10,7 @@ concatMap' fn = concat . map (\elem -> fn elem)
 -- and takes a list of boolean values and returns True only if all the values in the list are True.
 and' :: [Bool] -> Bool
 and' = foldl (\x acc -> if x then acc else False) True
+
+-- or is like and, only it returns True if any of the boolean values in a list is True.
+or' :: [Bool] -> Bool
+or' = foldl (\x acc -> if x then True else acc) False
