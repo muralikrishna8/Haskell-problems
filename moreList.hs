@@ -6,3 +6,7 @@ concat' = foldr (\acc x -> acc++x) []
 -- Doing concatMap is the same as first mapping a function to a list and then concatenating the list with concat
 concatMap' :: (t -> [a]) -> [t] -> [a]
 concatMap' fn = concat . map (\elem -> fn elem)
+
+-- and takes a list of boolean values and returns True only if all the values in the list are True.
+and' :: [Bool] -> Bool
+and' = foldl (\x acc -> if x then acc else False) True
